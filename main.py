@@ -10,7 +10,7 @@ import sys
 
 def extraction(url):
     with sync_playwright() as sync_playwright_instance:
-        browser = sync_playwright_instance.chromium.launch(headless=False)
+        browser = sync_playwright_instance.chromium.launch(headless=True)
         context = browser.new_context(viewport={'width': 1280, 'height': 1024}, accept_downloads=True,
                                         java_script_enabled=True, ignore_https_errors=True)
         page = context.new_page()
